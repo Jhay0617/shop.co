@@ -652,3 +652,213 @@
     display: flex;
   }
 }
+
+/* Category Page */
+
+@layer category {
+  .category {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-areas:
+      "sidebar main main main"
+      "sidebar main main main"
+      "sidebar main main main"
+      "sidebar main main main";
+    width: 1300px;
+    margin: 0 auto;
+  }
+  .sidebar {
+    grid-area: sidebar;
+    padding: 0 1rem;
+    border: 1px solid #f2f0f1;
+    border-radius: 50px;
+    /* margin: 0 auto; */
+  }
+
+  .main-content {
+    grid-area: main;
+  }
+  .top {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 1rem 1rem;
+  }
+
+  .sidebar-filters {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 2rem 1rem;
+    border-bottom: 2px solid #f2f0f1;
+  }
+
+  .categories {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 2rem 1rem;
+    border-bottom: 2px solid #f2f0f1;
+  }
+  .testing {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 300px;
+  }
+  .apparel {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+  }
+  .range {
+    padding: 2rem 1rem;
+    border-bottom: 2px solid #f2f0f1;
+  }
+  .range-price {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .range-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 1rem 0;
+  }
+  .price-range {
+    width: 250px;
+  }
+  .color-picker {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    padding: 2rem 1rem;
+    border-bottom: 2px solid #f2f0f1;
+  }
+  .color-container-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .color-range {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .size-container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+
+    padding: 2rem 1rem;
+    border-bottom: 2px solid #f2f0f1;
+  }
+  .size-drop-down {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .size-picker {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 300px;
+    width: 100%;
+    gap: 1rem;
+  }
+
+  .size-design {
+    color: rgba(0, 0, 0, 0.507);
+    background-color: #f0f0f0;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+  }
+  .dress-container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    padding: 2rem 1rem;
+  }
+  .style {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .style-picker {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 1rem;
+  }
+  .style-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .style-btn a {
+    background-color: black;
+    max-width: 200px;
+    width: 100%;
+    padding: 1rem 2rem;
+    color: white;
+    border-radius: 50px;
+    text-align: center;
+  }
+}
+@layer main-content {
+  .sort-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 1rem;
+  }
+  .sort-right-side {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .shirt-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 1rem;
+    padding: 2rem 1rem;
+    border-bottom: 2px solid #f2f0f1;
+  }
+  .main-content {
+    padding: 2rem 1rem;
+  }
+  .selection {
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+    padding: 2rem 1rem;
+  }
+  .previous {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 1rem;
+    border: 2px solid #f2f0f1;
+    border-radius: 25px;
+  }
+  .numbered {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .next {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border: 3px solid #f2f0f1;
+    border-radius: 25px;
+    gap: 10px;
+  }
+}
