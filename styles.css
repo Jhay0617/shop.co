@@ -1,6 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
 /* @import url("https://fonts.googleapis.com/css2?family=Anton&display=swap"); */
 @layer reset {
@@ -46,7 +46,7 @@
   h3,
   h4 {
     text-wrap: balance;
-    font-family: "Poppins", sans-serif;
+    font-family: 'Poppins', sans-serif;
   }
   h1 {
     font-size: 3rem;
@@ -89,11 +89,6 @@
     justify-content: space-between;
     align-items: center;
     padding: 0 2rem;
-    position: sticky;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    background-color: rgba(0, 0, 0, 0.514);
     width: 100%;
     color: black;
   }
@@ -118,13 +113,13 @@
     border: 2px solid black;
     border-radius: 20px;
     height: 40px;
+
+    display: none;
   }
-  ul li a {
-    color: black;
+  .primary_links:hover {
+    color: #4d4a4a;
+
     transition: all 0.3s;
-  }
-  ul li a:hover {
-    color: bisque;
   }
 }
 @layer hero-section {
@@ -224,6 +219,13 @@
     border-radius: 30px;
     padding: 2rem;
     margin: 0 1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    scroll-snap-align: start;
+  }
+  .arrival:hover {
+    transform: translateY(-1%);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2), 0 4px 6px rgba(0, 0, 0, 0.1);
   }
   .stars {
     width: 60%;
@@ -281,12 +283,20 @@
   }
   .style-container img {
     width: 100%;
+    border: 2px solid transparent;
+    border-radius: 20px;
   }
   .formal {
     grid-column: span 2;
   }
   .party {
     grid-column: span 2;
+  }
+  .type:hover {
+    border: 2px solid #262626;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+    transform: scale(1.1);
   }
 }
 @layer reviews {
@@ -365,7 +375,7 @@
   }
 
   .input-bg {
-    background: url("img/envelope.png") no-repeat left center white;
+    background: url('img/envelope.png') no-repeat left center white;
     background-size: 20px 20px;
     padding-left: 20px;
     min-height: 3rem;
@@ -437,7 +447,65 @@
     justify-content: center;
   }
 }
-
+@layer modal {
+  .modal {
+    max-width: 600px;
+    width: 100%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 4rem 6rem rgba(0, 0, 0, 0.3);
+    background-color: #f3f3f3;
+    padding: 4rem 2rem 1rem 2rem;
+    z-index: 1000;
+    transition: all 2s;
+    border-top-left-radius: 25%;
+    border-bottom-right-radius: 10%;
+  }
+  .products_on_sale {
+    display: flex;
+    padding: 1rem;
+    overflow-x: scroll;
+  }
+  .products_on_sale::-webkit-scrollbar {
+    display: none;
+  }
+  .on_sale {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  .btn_close--modal {
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background-color: rgb(126, 107, 107);
+    border-radius: 10px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  }
+  .btn_close--modal:active {
+    transform: translateY(4px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  .hidden {
+    display: none;
+    opacity: 0;
+  }
+}
+@layer overlay {
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    z-index: 100;
+    transition: all 2s;
+  }
+}
 /* Product-Page */
 
 @layer product-details {
@@ -661,10 +729,10 @@
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(4, 1fr);
     grid-template-areas:
-      "sidebar main main main"
-      "sidebar main main main"
-      "sidebar main main main"
-      "sidebar main main main";
+      'sidebar main main main'
+      'sidebar main main main'
+      'sidebar main main main'
+      'sidebar main main main';
     width: 1300px;
     margin: 0 auto;
   }
